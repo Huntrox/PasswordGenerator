@@ -1,0 +1,106 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 4px;
+    width: 300px;
+    height: 200px;
+    background-color:azure;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 45%);
+    margin: 0 auto 15px;
+}
+
+.horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#password-field {
+    font-size: 16px;
+    font-weight:bold;
+    /* margin-bottom: 16px; */
+    width: 100%;
+    border-radius: 2%;
+
+    border-color: rgba(255, 255, 255, 0);
+}
+
+#password-field:focus {
+    border-color: rgba(255, 255, 255, 0);
+}
+
+
+
+#length-input,
+#length-input:focus {
+    width: 24px;
+    border-color: rgba(255, 255, 255, .5);
+}
+
+.btn {
+    color: white;
+    background-color: white;
+    padding: 12px 20px;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    border-radius: 5%;
+    height: 32px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+.fill{
+    background-color: #adff2f;
+    position: relative;
+    margin-top: 5px;
+    height: 5px;
+    bottom: -11px;
+    left: -11px;
+    width: 299px;
+    transition: width 0.25s,background-color 0.25s;
+}
+
+
+#generate-btn {
+    background-image: url(/imgs/reload.png);
+}
+
+
+#copy-btn {
+    background-image: url(/imgs/copy.png);
+}
+
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#length-slider {
+    width: 100%;
+}

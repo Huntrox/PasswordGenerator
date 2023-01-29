@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Random Password Generator",
+  "description": "Generate random password with a slider to control the character length",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "content_security_policy": {
+    "script-src": "self"
+  }
+}
