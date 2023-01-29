@@ -79,6 +79,8 @@ function checkString(str, pattern) {
     return pattern.test(str);
 }
 
+
+//source: https://gist.github.com/rosszurowski/67f04465c424a9bc0dae
 function lerpColor(a, b, amount) {
 
     var ah = parseInt(a.replace(/#/g, ''), 16),
