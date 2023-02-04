@@ -20,10 +20,13 @@
         </div>
     </div>
     <div class="container">
-        <label for="length-slider">Password Length:</label>
         <div class="horizontal">
-            <input type="text" id="length-input" value="12" />
-            <input type="range" min="8" max="24" value="12" class="slider" id="length-slider">
+            <label for="length-slider">Password Length:</label>
+            <div class="length" style="font-weight: bold;"><span id="length">12</span></div>
+        </div>
+        <div class="horizontal">
+            <!-- <input type="text" id="length-input" value="12" /> -->
+            <input type="range" min="1" max="24" value="12" class="slider" id="length-slider">
         </div>
     </div>
 
