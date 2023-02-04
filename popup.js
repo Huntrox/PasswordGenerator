@@ -13,7 +13,8 @@ var copyBtn = document.getElementById("copy-btn");
 
 var lengthSlider = document.getElementById("length-slider");
 var passwordFlied = document.getElementById("password-field");
-var length = document.getElementById("length-input");
+
+var length_text = document.getElementById("length");
 var passwordStrengthFill = document.getElementById("password-strength");
 
 
@@ -21,7 +22,7 @@ generateBtn.addEventListener("click", generatePassword);
 copyBtn.addEventListener("click", copyPassword);
 
 lengthSlider.addEventListener("input", onSliderValueChange);
-length.addEventListener("input", onLengthInputChange);
+
 
 
 function generatePassword() {
@@ -34,14 +35,19 @@ function generatePassword() {
     }
     passwordFlied.value = generatedPassword;
 
-    var strength = calculatePasswordStrength(generatedPassword);
-
-    passwordStrengthFill.style.width = (300 / 4) * strength + "px";
-    passwordStrengthFill.style.backgroundColor = lerpColor('#ff0000','#adff2f',strength/4)
+    var strength = calculatePasswordStrength(generatedPassword,passLength);
+    length_text.innerHTML = passLength;
+   
+    var width =  (300 / 4) * strength;
+    width = width > 300 ? 300 : width; 
+    passwordStrengthFill.style.width = width + "px";
+    passwordStrengthFill.style.backgroundColor = lerpColor('#ff0000','#adff2f',clamp(strength/4,0,1))
 }
 
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
-function calculatePasswordStrength(value) {
+
+function calculatePasswordStrength(value,passLength) {
 
     var strength = 0;
     if (checkString(value, uppercase) && checkString(value, lowercase))
@@ -50,18 +56,14 @@ function calculatePasswordStrength(value) {
         strength += 1;
     if (checkString(value, symbol))
         strength += 2;
+
+    strength = strength * (passLength / 12);
     return strength;
-}
-
-function onLengthInputChange(event) {
-
-    lengthSlider.value = length.value;
-    generatePassword();
 }
 
 function onSliderValueChange(event) {
 
-    length.value = lengthSlider.value;
+    length_text.innerHTML = lengthSlider.value;
     generatePassword()
 }
 
